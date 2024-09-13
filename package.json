@@ -1,6 +1,6 @@
 {
   "name": "tg-bot-sender",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "type": "module",
   "description": "This lib for sending messages to bot",
   "main": "index.js",
@@ -12,6 +12,10 @@
     "build": "tsc",
     "send-test:dev": "ts-node-esm example/index.ts",
     "send-test:prod": "node example/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HellMenDos/tg-bot-sender.git"
   },
   "author": "hellomean",
   "license": "ISC",
