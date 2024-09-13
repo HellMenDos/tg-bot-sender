@@ -1,0 +1,23 @@
+{
+  "name": "tg-bot-sender",
+  "version": "1.0.4",
+  "type": "module",
+  "description": "This lib for sending messages to bot",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "push": "tsc && npm publish",
+    "build": "tsc",
+    "send-test:dev": "ts-node-esm example/index.ts",
+    "send-test:prod": "node example/index.js"
+  },
+  "author": "hellomean",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^22.5.4",
+    "axios": "^1.7.7",
+    "node-fetch": "^3.3.2"
+  }
+}
