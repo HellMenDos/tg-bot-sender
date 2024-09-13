@@ -15,11 +15,13 @@ export class TelegaSender implements ITelegaSender {
     private telegaToken: string = ''
     private saveFile: ISaveFile;
     private sender: SendMessage;
+    private logs: boolean;
 
-    constructor(telegaToken: string, folderPath: string) {
+    constructor(telegaToken: string, folderPath: string, logs: boolean = false) {
         this.telegaToken = telegaToken
         this.saveFile = new SaveFile(folderPath)    
         this.sender = new SendMessage(this.telegaToken, Methods.sendMessage)
+        this.logs = logs
     }
 
     public async sendFromIds(userIds: number[], data: Data, method: Methods) {
@@ -37,8 +39,10 @@ export class TelegaSender implements ITelegaSender {
         let responses = []
         for (let group of groupedIds) {
             const sendedData = await this.sender.sendMessages(group, data)
-            responses.push(...sendedData)
-            await this.saveFile.saveFile<ResponseData[]>(sendedData, String(new Date().getTime()))
+            if (this.logs) {
+                responses.push(...sendedData)
+                await this.saveFile.saveFile<ResponseData[]>(sendedData, String(new Date().getTime()))
+            }
         }
 
         return { 
@@ -49,8 +53,9 @@ export class TelegaSender implements ITelegaSender {
     public async sendFromId(userId: number, data: Data, method: Methods) {
         this.sender.changeMethod(method)
         const sendedData = await this.sender.sendMessage(userId, data)
-        await this.saveFile.saveFile<ResponseData>(sendedData, String(new Date().getTime()))
-
+        if (this.logs) {
+            await this.saveFile.saveFile<ResponseData>(sendedData, String(new Date().getTime()))
+        }
         return {
             amount: sendedData.status ? 1 : 0
         }

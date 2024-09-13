@@ -8,8 +8,9 @@ npm i tg-bot-sender
 import { TelegaSender, Methods } from "tg-bot-sender";
 ```
 ## Начало работы
+logs параметр указывает на сохранения логов в json формате
 ```typescript
-const tg = new TelegaSender(telegramToken, pathForLogs)
+const tg = new TelegaSender(telegramToken, pathForLogs, logs = false)
 ```
 ## Варианты отправки сообщений
 Отправка фото
