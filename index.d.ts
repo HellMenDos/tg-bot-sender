@@ -1,2 +1,2 @@
 export { TelegaSender } from './lib/main.js';
-export { Methods } from './lib/module/sendModule.js';
+export { Methods, Data } from './lib/module/sendModule.js';

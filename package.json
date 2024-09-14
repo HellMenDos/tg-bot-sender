@@ -1,6 +1,6 @@
 {
   "name": "tg-bot-sender",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "type": "module",
   "description": "This lib for sending messages to bot",
   "main": "index.js",
@@ -19,6 +19,16 @@
   },
   "author": "hellomean",
   "license": "ISC",
+  "keywords": [
+    "node",
+    "bot",
+    "telegram",
+    "telegram-bot",
+    "nodejs",
+    "typescript",
+    "tg-bot-sender",
+    "telegram-sender"
+  ],
   "dependencies": {
     "@types/node": "^22.5.4",
     "axios": "^1.7.7",
