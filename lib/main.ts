@@ -29,7 +29,7 @@ export class TelegaSender implements ITelegaSender {
         const groupedIds: number[][] = []
      
         userIds.forEach((value, index) => {
-            if (!Array.isArray(groupedIds[Math.ceil((index + 1) / 2) - 1])) {
+            if (!Array.isArray(groupedIds[Math.ceil((index + 1) / Const.DIVIDE_AMOUNT) - 1])) {
                 groupedIds[Math.ceil((index + 1) / Const.DIVIDE_AMOUNT) - 1] = [ value ]
             } else {
                 groupedIds[Math.ceil((index + 1) / Const.DIVIDE_AMOUNT) - 1].push(value)
