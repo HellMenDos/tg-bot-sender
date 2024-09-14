@@ -39,8 +39,9 @@ export class TelegaSender implements ITelegaSender {
         let responses = []
         for (let group of groupedIds) {
             const sendedData = await this.sender.sendMessages(group, data)
+            responses.push(...sendedData)
+
             if (this.logs) {
-                responses.push(...sendedData)
                 await this.saveFile.saveFile<ResponseData[]>(sendedData, String(new Date().getTime()))
             }
         }
