@@ -1,6 +1,6 @@
 {
   "name": "tg-bot-sender",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "type": "module",
   "description": "This lib for sending messages to bot",
   "main": "index.js",

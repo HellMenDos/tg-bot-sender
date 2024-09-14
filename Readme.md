@@ -6,7 +6,18 @@ npm i tg-bot-sender
 ```
 ## Импорты 
 ```typescript
-import { TelegaSender, Methods } from "tg-bot-sender";
+import { TelegaSender, Methods, Data } from "tg-bot-sender";
+```
+Структура сообщения Data
+```
+type Data = {
+    text: string,
+    photo?: string,
+    buttons?: {
+        buttonTitle: string,
+        buttonUrl: string
+    }[]
+}
 ```
 ## Начало работы
 logs параметр указывает на сохранения логов в json формате
