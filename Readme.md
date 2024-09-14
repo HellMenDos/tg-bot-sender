@@ -1,4 +1,5 @@
 # Документация
+[Ссылка на документацию](https://magnificent-maamoul-2f7a55.netlify.app/)
 Как установить ?
 ```npm
 npm i tg-bot-sender

@@ -10,7 +10,8 @@ export declare class TelegaSender implements ITelegaSender {
     private telegaToken;
     private saveFile;
     private sender;
-    constructor(telegaToken: string, folderPath: string);
+    private logs;
+    constructor(telegaToken: string, folderPath: string, logs?: boolean);
     sendFromIds(userIds: number[], data: Data, method: Methods): Promise<{
         amount: number;
     }>;
