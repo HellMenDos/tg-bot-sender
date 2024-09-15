@@ -1,14 +1,14 @@
-# Документация
-[Ссылка на документацию](https://magnificent-maamoul-2f7a55.netlify.app/)
-Как установить ?
+[Link to the documentation](https://magnificent-maamoul-2f7a55.netlify.app/)
+# Nodejs
+How to install ?
 ```npm
 npm i tg-bot-sender
 ```
-## Импорты 
+## Imports 
 ```typescript
 import { TelegaSender, Methods, Data } from "tg-bot-sender";
 ```
-Структура сообщения Data
+The structure of the Data message
 ```
 type Data = {
     text: string,
@@ -19,21 +19,21 @@ type Data = {
     }[]
 }
 ```
-Структура ответа 
+Response structure
 ```json
-{ "amount": 0 } // количество отправленных сообщений
+{ "amount": 0 } // number of messages sent
 ```
-## Начало работы
-logs параметр указывает на сохранения логов в json формате
+## Getting started
+The logs parameter indicates that logs are saved in json format
 ```typescript
 const tg = new TelegaSender(telegramToken, pathForLogs, logs = false)
 ```
-## Варианты отправки сообщений
-Отправка фото
+## Options for sending messages
+Sending photos
 ```typescript
 Methods.sendPhoto
 ```
-#### sendFromIds - отправка пользователям
+#### sendFromIds - sending to users
 ```typescript
 tg.sendFromIds([...telegramUserIds], {
     text: 'Hello',
@@ -46,7 +46,7 @@ tg.sendFromIds([...telegramUserIds], {
     .then((res: any) => console.log(res))
     .catch((err: any) => console.log(err))
 ```
-#### sendFromId - отправка пользователю
+#### sendFromId - sending to the user
 ```typescript
 tg.sendFromIds(telegramUserId, {
     text: 'Hello',
@@ -60,11 +60,11 @@ tg.sendFromIds(telegramUserId, {
     .catch((err: any) => console.log(err))
 ```
 
-Отправка сообщения 
+Sending a message
 ```typescript
 Methods.sendMessage
 ```
-#### sendFromIds - отправка пользователям
+#### sendFromIds - sending to users
 ```typescript
 tg.sendFromIds([...telegramUserIds], {
     text: 'Hello',
@@ -76,7 +76,7 @@ tg.sendFromIds([...telegramUserIds], {
     .then((res: any) => console.log(res))
     .catch((err: any) => console.log(err))
 ```
-#### sendFromId - отправка пользователю
+#### sendFromId - sending to the user
 ```typescript
 tg.sendFromIds(telegramUserId, {
     text: 'Hello',
