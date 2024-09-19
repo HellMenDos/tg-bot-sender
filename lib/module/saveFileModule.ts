@@ -5,7 +5,7 @@ type Status = {
 }
 
 export interface ISaveFile {
-    saveFile<T>(fileData: T, label?: string): Promise<Status>
+    saveFile<T>(fileData: T, label?: string): Promise<void>
 }
 
 export class SaveFile implements ISaveFile {
@@ -15,8 +15,8 @@ export class SaveFile implements ISaveFile {
         this.path = path
     }
 
-    public async saveFile<T>(fileData: T, label: string = ''): Promise<Status> {
-        return await (new Promise((res, rej) => {
+    public async saveFile<T>(fileData: T, label: string = ''): Promise<void> {
+        await (new Promise((res, rej) => {
             fs.writeFile(`${this.path}/log${label ? `-${label}` : ''}.json`, JSON.stringify(fileData), err => {
                 if (err) rej({ status: false }) 
                 res({ status: true })
