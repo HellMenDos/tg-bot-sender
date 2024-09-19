@@ -11,7 +11,7 @@
     "push": "tsc && npm publish",
     "build": "tsc",
     "send-test:dev": "ts-node-esm example/index.ts",
-    "send-test:prod": "node example/index.js"
+    "send-test:prod": "tsc && node example/index.js"
   },
   "repository": {
     "type": "git",

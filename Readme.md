@@ -36,7 +36,7 @@ Methods.sendPhoto
 #### sendFromIds - sending to users
 ```typescript
 tg.sendFromIds([...telegramUserIds], {
-    text: 'Hello',
+    text: 'Hello from npm',
     photo: 'Photo link',
     buttons:[{
         buttonTitle: 'Hello',
@@ -49,7 +49,7 @@ tg.sendFromIds([...telegramUserIds], {
 #### sendFromId - sending to the user
 ```typescript
 tg.sendFromIds(telegramUserId, {
-    text: 'Hello',
+    text: 'Hello from npm',
     photo: 'Photo link',
     buttons:[{
         buttonTitle: 'Hello',
@@ -67,7 +67,7 @@ Methods.sendMessage
 #### sendFromIds - sending to users
 ```typescript
 tg.sendFromIds([...telegramUserIds], {
-    text: 'Hello',
+    text: 'Hello from npm',
     buttons:[{
         buttonTitle: 'Hello',
         buttonUrl: 'https://google.com'
@@ -79,7 +79,7 @@ tg.sendFromIds([...telegramUserIds], {
 #### sendFromId - sending to the user
 ```typescript
 tg.sendFromIds(telegramUserId, {
-    text: 'Hello',
+    text: 'Hello from npm',
     buttons:[{
         buttonTitle: 'Hello',
         buttonUrl: 'https://google.com'

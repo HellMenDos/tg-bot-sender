@@ -35,7 +35,7 @@ export class TelegaSender implements ITelegaSender {
                 groupedIds[Math.ceil((index + 1) / Const.DIVIDE_AMOUNT) - 1].push(value)
             }
         })
-
+    
         let responses = []
         for (let group of groupedIds) {
             const sendedData = await this.sender.sendMessages(group, data)
