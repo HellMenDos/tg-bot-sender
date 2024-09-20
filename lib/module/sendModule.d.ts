@@ -29,7 +29,7 @@ export declare class SendMessage implements ISendMessage {
     sendMessage(userId: number, data: Data, mode?: 'HTML' | 'MarkdownV2'): Promise<{
         userId: number;
         status: boolean;
-        resData: unknown;
+        resData: any;
     }>;
     sendMessages(userIds: number[], data: Data, mode?: 'HTML' | 'MarkdownV2'): Promise<Status[]>;
 }
